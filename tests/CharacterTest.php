@@ -42,18 +42,27 @@ class CharacterTest extends TestCase
 
 	public function test_damage_is_substracted_from_health()
 	{
-		//given escenario
 
 		$attacker = new Character();
 		$damaged = new Character();
 
-		// action
-
 		$attacker->attacks($damaged);
 
-		//then
 		$result = $damaged->getHealth();
 
 		$this->assertEquals(900, $result);
 	}
+
+	// public function test_damage_received_exceeds_current_Health_and_becomes_0_and_the_character_dies()
+	// {
+	
+	// 	$attacker = new Character();
+	// 	$damaged = new Character();
+
+	// 	$attacker->attacks($damaged);
+
+	// 	$result = $damaged->getHealth();
+
+	// 	$this->assertEquals(0, $result);
+	// }
 }
